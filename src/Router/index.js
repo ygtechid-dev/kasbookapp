@@ -9,12 +9,12 @@ import Login from '../pages/Login';
 import SplashScreen from '../pages/SplashScreen';
 
 import MyTabBar from '../component/MyTabBar';
-import Access from '../pages/Access';
-import List from '../pages/List';
+import Feed from '../pages/Feed';
 import Register from '../pages/Login/Register';
-import Maintenance from '../pages/Maintenance';
-import Shop from '../pages/Shop';
-import System from '../pages/System';
+import QuranMenu from '../pages/QuranMenu';
+import MenuQuran from '../pages/QuranMenu/MenuQuran';
+import Setting from '../pages/Setting';
+import ViewYT from '../pages/ViewYT';
 
 
 
@@ -28,10 +28,9 @@ const MyTabs = () => {
   return (
     <Tab.Navigator tabBar={props => <MyTabBar {...props} />} screenOptions={{ headerShown: false }}>
       <Tab.Screen name="Beranda" title="Tes" component={Home} />
-      <Tab.Screen name="Menu" component={List} />
-      <Tab.Screen name="Profil" component={List} />
+      <Tab.Screen name="Peta Navigasi" component={Feed} />
 
-      <Tab.Screen name="Setting" component={List} />
+      <Tab.Screen name="Profil" component={Setting} />
       {/* <Tab.Screen name="Setting" component={Home} /> */}
      
      
@@ -59,35 +58,28 @@ const Router = () => {
       component={Login}
       options={{headerShown: false}}
     />
-     
-        <Stack.Screen
-      name="Maintenance"
-      component={Maintenance}
-      options={{headerShown: false}}
-    />
-
-<Stack.Screen
-      name="System"
-      component={System}
-      options={{headerShown: false}}
-    />
-    <Stack.Screen
-      name="Access"
-      component={Access}
-      options={{headerShown: false}}
-    />
       <Stack.Screen
-      name="Shop"
-      component={Shop}
+      name="MenuQuran"
+      component={MenuQuran}
       options={{headerShown: false}}
     />
-    
+       <Stack.Screen
+      name="ListQuran"
+      component={QuranMenu}
+      options={{headerShown: false}}
+    />
+       <Stack.Screen
+      name="ViewYT"
+      component={ViewYT}
+      options={{headerShown: false}}
+    />
+     
      <Stack.Screen
       name="Register"
       component={Register}
       options={{headerShown: false}}
     />
-   
+
     </Stack.Navigator>
   )
 }

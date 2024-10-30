@@ -3,6 +3,9 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
 import 'firebase/compat/storage'
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
+
 const config= {
 
 //Simulasi
@@ -20,6 +23,10 @@ databaseURL: "https://harumproj-default-rtdb.asia-southeast1.firebasedatabase.ap
 
 
 
+// Initialize Google Sign-In
+GoogleSignin.configure({
+    webClientId: '186347566562-stfqg8m8lovvl4ql2d3ekt8fif01qtvi.apps.googleusercontent.com', // This should be your Firebase Web Client ID
+  });
 
 const Fire = !firebase.apps.length ? firebase.initializeApp(config) : firebase.app();
 export const storage = getStorage(Fire)

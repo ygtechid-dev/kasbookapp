@@ -13,8 +13,8 @@ const MyTabBar = ({ state, descriptors, navigation }) => {
 
     
       paddingVertical: 10,
-      backgroundColor: '#2c94df',
-      }}>
+      backgroundColor: 'white',
+      borderRadius: 10}}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
           const label =
