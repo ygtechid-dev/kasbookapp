@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "186347566562",
+    "firebase_url": "https://harumproj-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "harumproj",
+    "storage_bucket": "harumproj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186347566562:android:11cfab15f5203d44e175bb",
+        "android_client_info": {
+          "package_name": "com.ladjurepair"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186347566562-5pf14setu0u6p2153ujd343g7icdtsgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ladjurepair",
+            "certificate_hash": "422aaf85b9cf68c7e4a45aca1ec738877226eeee"
+          }
+        },
+        {
+          "client_id": "186347566562-stfqg8m8lovvl4ql2d3ekt8fif01qtvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXtXp4q-fN1OynU5-I1ukFN-WMJJM87qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186347566562-stfqg8m8lovvl4ql2d3ekt8fif01qtvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

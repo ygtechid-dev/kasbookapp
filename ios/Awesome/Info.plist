@@ -38,7 +38,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Give Access for Camera</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>For saving photos</string>
 	<key>UIAppFonts</key>
@@ -67,6 +67,7 @@
 		<string>Quicksand-Medium.ttf</string>
 		<string>Quicksand-Regular.ttf</string>
 		<string>Quicksand-SemiBold.ttf</string>
+		<string>LPMQ-IsepMisbah.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

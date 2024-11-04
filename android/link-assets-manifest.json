@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/LPMQ-IsepMisbah.ttf",
+      "sha1": "72babf824694a116c8fe97b580dd82b5bf4e4f40"
+    },
+    {
       "path": "assets/fonts/OFL.txt",
       "sha1": "9f27955a401cc9ea5ba3503027a4ea502c87e70c"
     },

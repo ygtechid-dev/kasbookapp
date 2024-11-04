@@ -4,9 +4,11 @@ import { ActivityIndicator, Alert, Image, StyleSheet, Text, TextInput, Touchable
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MainLogo from '../../assets/harumpeduli.jpeg';
-import FontAwesomeIcon5 from 'react-native-vector-icons/FontAwesome5';
+import Logo from '../../assets/ladjulogo.png';
 
 import Fire from '../../config/Fire';
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import { Divider } from 'react-native-paper';
 
 const Login = ({navigation}) => {
   const [inputan, setInput] = useState({
@@ -50,11 +52,7 @@ const Login = ({navigation}) => {
 
         // Simpan token (atau UID user) ke AsyncStorage
         try {
-          const useParse = JSON.stringify(user)
-          await AsyncStorage.setItem('@token', user.uid); 
-          await AsyncStorage.setItem('@user', useParse); 
-
-          // UID sebagai token
+          await AsyncStorage.setItem('@token', user.uid); // UID sebagai token
           Alert.alert('Login Success', `Welcome, ${user.email}`);
           navigation.replace('Home'); // Navigasi ke halaman Home
         } catch (error) {
@@ -107,26 +105,29 @@ const Login = ({navigation}) => {
         style={styles.wrapper}>
         <>
          
+         <View style={{flexDirection: 'row'}}>
+         <FontAwesome5Icon name="chevron-left" size={22} color={'white'} />
       
-      
-      <View style={styles.wrapHeader}>
-      <View>
-      <Text style={styles.txtHead}>Sign In</Text>
-        <Text style={styles.descHead}>App Harum Peduli</Text>
-      </View>
-      <View>
-        <Image source={MainLogo} style={{width: 130, height: 60, marginRight: 30, marginTop: 10}} />
-      </View>
-      </View>
-     
+      <Text style={styles.txtDesc}>Sign In</Text>
+         </View>
+       
+         <Divider style={{marginTop: 20, width: '100%', color: 'white'}} bold={true}/>
         
-        <View style={{marginTop: 40}}>
+        <View style={{alignItems: 'center', marginTop: 20,}}>
+        <Image source={Logo} style={{ width: 130, height: 130 }} />
+        <Text style={[styles.txtDesc, {
+          marginTop: 14,
+          marginLeft: -5
+        }]}>Ladju Repair</Text>
+
+        </View>
+        <View style={{marginTop: 40, paddingHorizontal: 10}}>
           
         <TextInput
             // eslint-disable-next-line react-native/no-inline-styles
             style={styles.txtInput}
             placeholderTextColor="grey" 
-            placeholder="Email"
+            placeholder="Email Address"
             onChangeText={(e) => setInput({ ...inputan, email: e })}  
           />
             <View style={styles.formInput}>
@@ -160,25 +161,11 @@ const Login = ({navigation}) => {
               >
         <Text style={styles.txtBtn} >Login</Text>
     </TouchableOpacity>
-    <TouchableOpacity style={[styles.btn, {
-      backgroundColor: 'red',
-      marginTop: 10,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }]} 
-             onPress={() => alert('Under Development')}
-              >
-    <FontAwesomeIcon5 name="google" size={14} color="white" style={{marginTop: 3, alignSelf: 'center', marginRight: 10}} />
-
-        <Text style={styles.txtBtn} >Login dengan Google</Text>
-    </TouchableOpacity>
-
     <Text
         style={styles.link}
         onPress={() => handleRegister()}
       >
-        Don't have an account? Register here
+   Don't have an account? Register Here
       </Text>
        </>
       }
@@ -202,31 +189,36 @@ const Login = ({navigation}) => {
 export default Login;
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: 'white', },
+  container: {flex: 1, backgroundColor: '#2c94df', },
   wrapper: {
     // alignItems: 'center',
-
-    marginLeft: 30,
+    marginHorizontal: 30,
     marginTop: 30,
   },
 wrapHeader: {flexDirection: 'row', justifyContent: 'space-between'},
 txtHead: {color: 'black', fontWeight: 'bold', fontSize: 24,  marginTop: 10,},
 descHead: {color: '#8D92A3',  fontSize: 16, marginBottom: 30, marginTop: 10,},
+txtDesc: {
+  color: 'white',
+  marginLeft: 16, 
+  fontSize: 20,
+  marginTop: -2
+},
 txtInput: {
   backgroundColor: 'white',
   borderRadius: 12,
   marginBottom: 8,
-  borderWidth: 0.5,
-  borderColor: 'black',
-  width: '90%',
+
+  paddingHorizontal: 20,
+  width: '100%',
   color: 'black'
 },
 link: {
-  marginTop: 15,
+  marginTop: 10,
   textAlign: 'center',
-  marginLeft: -20,
+  marginLeft: 0,
   marginBottom: -20,
-  color: '#3E4A89',
+  color: 'white',
 },
 toggleButton: {
   position: 'absolute',
@@ -237,7 +229,7 @@ toggleText: {
   color: '#005B8F',
   fontSize: 14,
   fontWeight: '600',
-  marginRight: 40,
+  marginRight: 10,
   marginTop: -27
 },
 formInput: {
@@ -250,6 +242,6 @@ formInput: {
 //   borderRadius: 10,
 //   paddingLeft: 10
 // },
-btn: {backgroundColor: '#005B8F', width: '90%', height: 40,  marginBottom: 10, borderRadius: 8, marginTop: 30},
-txtBtn: {textAlign: 'center', marginTop:3, fontSize: 14, fontFamily: 'Poppins-Light', paddingVertical: 5, color: 'white', fontWeight: 'bold'}
+btn: {backgroundColor: 'white', width: '90%', height: 40,  marginBottom: 10, borderRadius: 8, marginTop: 30, alignSelf: 'center'},
+txtBtn: {textAlign: 'center', marginTop:3, fontSize: 14, fontFamily: 'Poppins-Light', paddingVertical: 5, color: 'black', fontWeight: 'bold'}
 });

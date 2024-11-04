@@ -1,4 +1,4 @@
-package com.harumpeduli;
+package com.ladjurepair;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
