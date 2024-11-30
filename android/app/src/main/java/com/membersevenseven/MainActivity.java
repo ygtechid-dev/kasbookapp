@@ -1,4 +1,4 @@
-package com.ladjurepair;
+package com.cpajak;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

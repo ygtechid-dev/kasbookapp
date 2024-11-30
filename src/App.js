@@ -6,10 +6,8 @@
  * @flow strict-local
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
-  PermissionsAndroid,
-  Platform,
   StyleSheet
 } from 'react-native';
 import Login from './pages/Login'
@@ -20,18 +18,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import Router from './Router';
 
-
-
-
 const App = () => {
-
-
-
-
-
-  
- 
-
   return (
     <>
      <NavigationContainer>

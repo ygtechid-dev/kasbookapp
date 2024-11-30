@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:186347566562:android:11cfab15f5203d44e175bb",
         "android_client_info": {
-          "package_name": "com.ladjurepair"
+          "package_name": "com.cpajak"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "186347566562-5pf14setu0u6p2153ujd343g7icdtsgd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ladjurepair",
+            "package_name": "com.cpajak",
             "certificate_hash": "422aaf85b9cf68c7e4a45aca1ec738877226eeee"
           }
         },

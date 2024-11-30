@@ -1,4 +1,4 @@
-package com.ladjurepair.newarchitecture;
+package com.cpajak.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.ladjurepair.BuildConfig;
-import com.ladjurepair.newarchitecture.components.MainComponentsRegistry;
-import com.ladjurepair.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.cpajak.BuildConfig;
+import com.cpajak.newarchitecture.components.MainComponentsRegistry;
+import com.cpajak.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

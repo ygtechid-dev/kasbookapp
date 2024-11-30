@@ -27,7 +27,6 @@ export const conversiDateTimeIDN = (currentDate) => {
     return tglIDN;
   };
 
-  
 
   export const getDayOnlyIDN = (currentDate) => {
     var hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];

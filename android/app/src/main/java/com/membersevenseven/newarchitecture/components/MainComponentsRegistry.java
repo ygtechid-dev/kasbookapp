@@ -1,4 +1,4 @@
-package com.ladjurepair.newarchitecture.components;
+package com.cpajak.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

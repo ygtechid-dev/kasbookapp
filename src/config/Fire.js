@@ -7,19 +7,21 @@ const config= {
 
 //Simulasi
 
-apiKey: "AIzaSyATe9-_d_hBtSCFtG3BI9-15ORcLdQqbpI",
+// apiKey: "AIzaSyDjqSCV-K3hpJ38lCRvnMFyHM3ZF_QrDkE",
+// authDomain: "mmbr77-64c35.firebaseapp.com",
+// databaseURL: "https://mmbr77-64c35-default-rtdb.firebaseio.com",
+// projectId: "mmbr77-64c35",
+// storageBucket: "mmbr77-64c35.appspot.com",
+// messagingSenderId: "224096714069",
+// appId: "1:224096714069:web:dc32f9f944d2aa577b03dc"
 
-authDomain: "ladjurepair.firebaseapp.com",
-
-projectId: "ladjurepair",
-
-storageBucket: "ladjurepair.firebasestorage.app",
-
-messagingSenderId: "296950821808",
-
-appId: "1:296950821808:web:0692eba323082148dbdc75",
-databaseURL: "https://ladjurepair-default-rtdb.asia-southeast1.firebasedatabase.app/",
-
+apiKey: "AIzaSyAFbwTXGm-9mCvXWE7ppwJg_f9_pSvGvbQ",
+authDomain: "projinputpaket.firebaseapp.com",
+projectId: "projinputpaket",
+storageBucket: "projinputpaket.appspot.com",
+messagingSenderId: "686509897613",
+appId: "1:686509897613:web:2c6bde130d67ec6fdeafc4",
+databaseURL: "https://projinputpaket-default-rtdb.firebaseio.com/",
 
 }
 

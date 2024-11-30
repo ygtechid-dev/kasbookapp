@@ -1,14 +1,9 @@
 /* eslint-disable prettier/prettier */
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import MainLogo from '../../assets/harumpeduli.jpeg';
-import Logo from '../../assets/ladjulogo.png';
-
-import Fire from '../../config/Fire';
-import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import { Divider } from 'react-native-paper';
+import FontAwesomeIcon5 from 'react-native-vector-icons/FontAwesome5';
 
 const Login = ({navigation}) => {
   const [inputan, setInput] = useState({
@@ -17,54 +12,19 @@ const Login = ({navigation}) => {
     
   })
   const [loading, setLoading]= useState(false)
-  const [visibleIklan, setVisibleIklan]= useState(true)
-
   const [hidePassword, setHidePassword] = useState(true);
-  const [dataSetting, setDataSetting] = useState({});
 
   console.log('inputan', inputan);
 
-
-
-  
   const handleLogin = async () => {
-    setLoading(true);
-  
- 
-  // AsyncStorage.setItem('@token', token)
-    
-  if(inputan.email == "") {
-    setLoading(false)
 
-    alert('Silahkan input email')
+    const prefix = "KBOOK-";
+    const uniquenumber = Math.floor(Math.random() * 1000000);
+    const tokz = prefix + uniquenumber
+    AsyncStorage.setItem('@token', tokz)
 
-   } else if(inputan.password == "") {
-    setLoading(false)
+navigation.push('Home');
 
-    alert('Silahkan input password')
-
-   } else {
-
-    Fire.auth()
-      .signInWithEmailAndPassword(inputan.email, inputan.password)
-      .then(async (userCredential) => {
-        const user = userCredential.user;
-
-        // Simpan token (atau UID user) ke AsyncStorage
-        try {
-          await AsyncStorage.setItem('@token', user.uid); // UID sebagai token
-          Alert.alert('Login Success', `Welcome, ${user.email}`);
-          navigation.replace('Home'); // Navigasi ke halaman Home
-        } catch (error) {
-          Alert.alert('Storage Error', 'Failed to save token');
-        }
-
-      })
-      .catch((error) => {
-        setLoading(false);
-        Alert.alert('Login Error', error.message);
-      });
-  }
 }
   
    
@@ -81,13 +41,6 @@ const Login = ({navigation}) => {
      
 
 
-  // if(inputan.email == "admin@gmail.com" && inputan.password == "admin") {
-  //     navigation.navigate('Home')
-  
-  //     console.log('token', token);
-  // } else {
-  //     alert('Email dan Password Salah!')
-  // }
   
   const togglePasswordVisibility = () => {
     setHidePassword(!hidePassword);
@@ -99,35 +52,33 @@ const Login = ({navigation}) => {
    }
   
   return (
-    <>
     <View style={styles.container}>
       <View
         style={styles.wrapper}>
         <>
          
-         <View style={{flexDirection: 'row'}}>
-         <FontAwesome5Icon name="chevron-left" size={22} color={'white'} />
       
-      <Text style={styles.txtDesc}>Sign In</Text>
-         </View>
-       
-         <Divider style={{marginTop: 20, width: '100%', color: 'white'}} bold={true}/>
-        
-        <View style={{alignItems: 'center', marginTop: 20,}}>
-        <Image source={Logo} style={{ width: 130, height: 130 }} />
-        <Text style={[styles.txtDesc, {
-          marginTop: 14,
-          marginLeft: -5
-        }]}>Ladju Repair</Text>
+      
+      <View style={styles.wrapHeader}>
+      <View>
+      <Text style={styles.txtHead}>Selamat Datang,</Text>
+        <Text style={styles.descHead}>di Aplikasi Kasbook</Text>
+      </View>
+      <View>
+      <FontAwesomeIcon5 name="wallet" size={30} color="red" style={{marginTop: 30, marginRight: 30}} />
+    
 
-        </View>
-        <View style={{marginTop: 40, paddingHorizontal: 10}}>
+      </View>
+      </View>
+     
+        
+        {/* <View style={{marginTop: 40}}>
           
         <TextInput
             // eslint-disable-next-line react-native/no-inline-styles
             style={styles.txtInput}
             placeholderTextColor="grey" 
-            placeholder="Email Address"
+            placeholder="Username"
             onChangeText={(e) => setInput({ ...inputan, email: e })}  
           />
             <View style={styles.formInput}>
@@ -142,11 +93,10 @@ const Login = ({navigation}) => {
  <TouchableOpacity onPress={togglePasswordVisibility} style={styles.toggleButton}>
               <Text style={styles.toggleText}>{hidePassword ? 'Lihat' : 'Tutup'}</Text>
             </TouchableOpacity>
-           
             </View>
          
        
-        </View>
+        </View> */}
         
        
 
@@ -159,14 +109,9 @@ const Login = ({navigation}) => {
 <TouchableOpacity style={styles.btn} 
              onPress={handleLogin}
               >
-        <Text style={styles.txtBtn} >Login</Text>
+        <Text style={styles.txtBtn} >Masuk</Text>
     </TouchableOpacity>
-    <Text
-        style={styles.link}
-        onPress={() => handleRegister()}
-      >
-   Don't have an account? Register Here
-      </Text>
+
        </>
       }
          
@@ -178,47 +123,30 @@ const Login = ({navigation}) => {
         </>
       </View>
     </View>
-  
-   
-    
-    </>
-    
   );
 };
 
 export default Login;
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: '#2c94df', },
+  container: {flex: 1, backgroundColor: 'white', },
   wrapper: {
     // alignItems: 'center',
-    marginHorizontal: 30,
+
+    marginLeft: 30,
     marginTop: 30,
   },
 wrapHeader: {flexDirection: 'row', justifyContent: 'space-between'},
 txtHead: {color: 'black', fontWeight: 'bold', fontSize: 24,  marginTop: 10,},
 descHead: {color: '#8D92A3',  fontSize: 16, marginBottom: 30, marginTop: 10,},
-txtDesc: {
-  color: 'white',
-  marginLeft: 16, 
-  fontSize: 20,
-  marginTop: -2
-},
 txtInput: {
   backgroundColor: 'white',
   borderRadius: 12,
   marginBottom: 8,
-
-  paddingHorizontal: 20,
-  width: '100%',
+  borderWidth: 0.5,
+  borderColor: 'black',
+  width: '90%',
   color: 'black'
-},
-link: {
-  marginTop: 10,
-  textAlign: 'center',
-  marginLeft: 0,
-  marginBottom: -20,
-  color: 'white',
 },
 toggleButton: {
   position: 'absolute',
@@ -226,10 +154,10 @@ toggleButton: {
   top: 40,
 },
 toggleText: {
-  color: '#005B8F',
+  color: 'green',
   fontSize: 14,
   fontWeight: '600',
-  marginRight: 10,
+  marginRight: 40,
   marginTop: -27
 },
 formInput: {
@@ -242,6 +170,6 @@ formInput: {
 //   borderRadius: 10,
 //   paddingLeft: 10
 // },
-btn: {backgroundColor: 'white', width: '90%', height: 40,  marginBottom: 10, borderRadius: 8, marginTop: 30, alignSelf: 'center'},
-txtBtn: {textAlign: 'center', marginTop:3, fontSize: 14, fontFamily: 'Poppins-Light', paddingVertical: 5, color: 'black', fontWeight: 'bold'}
+btn: {backgroundColor: 'red', width: '90%', height: 40,  marginBottom: 10, borderRadius: 8, marginTop: 10},
+txtBtn: {textAlign: 'center', marginTop:3, fontSize: 14, fontFamily: 'Poppins-Light', paddingVertical: 5, color: 'white', fontWeight: 'bold'}
 });
